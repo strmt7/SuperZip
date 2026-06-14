@@ -30,7 +30,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@7211b7c8077ea37d8641b6271f6a365a22a5fbfa # v4.36.0
+        uses: github/codeql-action/init@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
         with:
           languages: c-cpp
           build-mode: manual
@@ -41,7 +41,7 @@ jobs:
         shell: pwsh
         run: tools/build.ps1 -Configuration Release -PackageVersion 0.1.0-security
       - name: Analyze C++
-        uses: github/codeql-action/analyze@7211b7c8077ea37d8641b6271f6a365a22a5fbfa # v4.36.0
+        uses: github/codeql-action/analyze@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
         with:
           category: /language:c-cpp
 
@@ -60,13 +60,13 @@ jobs:
         with:
           persist-credentials: false
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@7211b7c8077ea37d8641b6271f6a365a22a5fbfa # v4.36.0
+        uses: github/codeql-action/init@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
         with:
           languages: actions
           config-file: ./.github/codeql/codeql-config.yml
           queries: security-extended,security-and-quality
       - name: Analyze GitHub Actions
-        uses: github/codeql-action/analyze@7211b7c8077ea37d8641b6271f6a365a22a5fbfa # v4.36.0
+        uses: github/codeql-action/analyze@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
         with:
           category: /language:actions
 
@@ -115,7 +115,7 @@ jobs:
           zizmor --format sarif --persona auditor .github/workflows > zizmor-results.sarif
       - name: Upload zizmor SARIF
         if: always()
-        uses: github/codeql-action/upload-sarif@7211b7c8077ea37d8641b6271f6a365a22a5fbfa # v4.36.0
+        uses: github/codeql-action/upload-sarif@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
         with:
           sarif_file: zizmor-results.sarif
           category: zizmor
@@ -153,7 +153,7 @@ jobs:
           skip-dirs: third_party,build,out,reports
       - name: Upload Trivy SARIF
         if: always()
-        uses: github/codeql-action/upload-sarif@7211b7c8077ea37d8641b6271f6a365a22a5fbfa # v4.36.0
+        uses: github/codeql-action/upload-sarif@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
         with:
           sarif_file: trivy-results.sarif
           category: trivy-fs
@@ -190,7 +190,7 @@ jobs:
             > semgrep-results.sarif
       - name: Upload Semgrep SARIF
         if: always()
-        uses: github/codeql-action/upload-sarif@7211b7c8077ea37d8641b6271f6a365a22a5fbfa # v4.36.0
+        uses: github/codeql-action/upload-sarif@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
         with:
           sarif_file: semgrep-results.sarif
           category: semgrep
@@ -224,7 +224,7 @@ jobs:
           ignore-globs: "**/.git/**,**/third_party/**,**/build/**,**/out/**,**/reports/**"
       - name: Upload DevSkim SARIF
         if: always()
-        uses: github/codeql-action/upload-sarif@7211b7c8077ea37d8641b6271f6a365a22a5fbfa # v4.36.0
+        uses: github/codeql-action/upload-sarif@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
         with:
           sarif_file: devskim-results.sarif
           category: devskim
@@ -287,7 +287,7 @@ jobs:
           publish_results: true
       - name: Upload Scorecard SARIF
         if: always()
-        uses: github/codeql-action/upload-sarif@7211b7c8077ea37d8641b6271f6a365a22a5fbfa # v4.36.0
+        uses: github/codeql-action/upload-sarif@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
         with:
           sarif_file: scorecard-results.sarif
           category: scorecard
