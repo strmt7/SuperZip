@@ -51,7 +51,7 @@ function Test-ChangedFileTextPolicy {
         "sk-[A-Za-z0-9]{20,}",
         "AKIA[0-9A-Z]{16}",
         "-----BEGIN (RSA|DSA|EC|OPENSSH|PGP) PRIVATE KEY-----",
-        "C:\\Users\\strat"
+        ("C:\\Users\\" + "[^\\\r\n]+")
     )
     foreach ($pattern in $secretPatterns) {
         if ($text -match $pattern) {
@@ -157,4 +157,4 @@ foreach ($path in $paths) {
     Test-ChangedWorkflowPolicy -Path $path
 }
 
-Write-Host "Changed-file hygiene passed. Paths checked: $($paths.Count)."
+Write-Output "Changed-file hygiene passed. Paths checked: $($paths.Count)."
