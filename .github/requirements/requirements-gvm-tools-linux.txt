@@ -37,5 +37,6 @@ PyNaCl==1.6.2 \
     --hash=sha256:8a66d6fb6ae7661c58995f9c6435bda2b1e68b54b598a6a10247bfcdadac996c
 python-gvm==27.2.0 \
     --hash=sha256:a93551f7aac632ef5b7e18655432a6111b01904f0437f08e203675ddf2407813
-typing_extensions==4.15.0 \
-    --hash=sha256:f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548
+typing_extensions==4.16.0 \
+    --hash=sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8 \
+    --hash=sha256:dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5
