@@ -239,11 +239,11 @@ jobs:
           print("Greenbone/OpenVAS reported zero critical, high, medium, or low vulnerabilities.")
           PY
       - name: Vulnetix health check
-        uses: Vulnetix/cli@bcfaca703d9c893a97d0a8e584ebd5b0070b109a # v3.32.0
+        uses: Vulnetix/cli@f544d443e87b73edabbb4aaeb44649c9b99a9d44 # v3.77.3
         with:
           org-id: ${{ steps.config.outputs.vulnetix_org_id }}
       - name: Upload OpenVAS artifacts to Vulnetix
-        uses: Vulnetix/cli@bcfaca703d9c893a97d0a8e584ebd5b0070b109a # v3.32.0
+        uses: Vulnetix/cli@f544d443e87b73edabbb4aaeb44649c9b99a9d44 # v3.77.3
         with:
           org-id: ${{ steps.config.outputs.vulnetix_org_id }}
           task: upload
